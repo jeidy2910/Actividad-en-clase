@@ -8,4 +8,9 @@ import { Component, signal } from '@angular/core';
 })
 export class App {
   protected readonly title = signal('fundamentos');
+  colorActual: string = 'gray';
+  
+  actualizarColor(color: string) {
+    this.colorActual = color;
+  }
 }

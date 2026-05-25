@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-botones',
@@ -7,10 +7,16 @@ import { Component } from '@angular/core';
   styleUrl: './botones.scss',
 })
 export class Botones {
-  @Output() colorSeleccionado = new EventEmitter<string>();
-  
-  // Método para emitir el color seleccionado
-  seleccionarColor(color: string) {
+    @Output() colorSeleccionado = new EventEmitter<string>();
+
+  colores = [
+    { nombre: 'Rojo', valor: 'red' },
+    { nombre: 'Verde', valor: 'green' },
+    { nombre: 'Azul', valor: 'blue' },
+    { nombre: 'Amarillo', valor: 'gold' }
+  ];
+
+  cambiarColor(color: string) {
     this.colorSeleccionado.emit(color);
   }
 }

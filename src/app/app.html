@@ -1,1 +1,8 @@
-<app-pantalla></app-pantalla>
+<div class="contenedor-principal">
+  <h1>Cuadrito cambia Color</h1>
+  
+
+  <app-pantalla [colorCuadrado]="colorActual"></app-pantalla>
+  
+  <app-botones (colorSeleccionado)="actualizarColor($event)"></app-botones>
+</div>

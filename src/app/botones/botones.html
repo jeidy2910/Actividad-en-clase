@@ -1,6 +1,9 @@
-<div class="contenedor-botones">
-    <button (click)="seleccionarColor('blue')" class="btn azul">Azul</button>
-    <button (click)="seleccionarColor('green')" class="btn verde">Verde</button>
-    <button (click)="seleccionarColor('pink')" class="btn rosado">Rosado</button>
-    <button (click)="seleccionarColor('red')" class="btn rojo">Rojo</button>
+<div class="botones-container">
+  <button 
+    *ngFor="let color of colores"
+    [style.backgroundColor]="color.valor"
+    (click)="cambiarColor(color.valor)"
+    class="btn-color">
+    {{ color.nombre }}
+  </button>
 </div>
